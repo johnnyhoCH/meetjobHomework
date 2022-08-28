@@ -1,0 +1,210 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<title>0823Homework</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<style>
+		#wrapper{
+			width: 100%;
+			min-height: 100%;
+			margin-bottom: -50px;
+		}
+
+		#banner{
+			width: 100%;
+			height: 100px;
+			background-color: #130E59;
+		}
+		#banner img{
+			height: 100%;
+		}
+
+		#menu{
+			width: 100%;
+			height: 70px;
+			background-color: #1A155C;
+			color: white;
+		}
+
+		#content1{
+			width: 100%;
+			min-height: 150px;
+		}
+
+		#content1 img{
+			margin: 10px;
+			width: 30%;
+		}
+
+		#content2{
+			width: 100%;
+			height: 200px;
+			background-color: #B3B5E1;
+		}
+
+		#footer{
+			width: 100%;
+			height: 50px;
+			background-color: #505063;
+		}
+
+		#menulist, #menulist ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+		}
+
+		#menulist li {
+			float: left;
+			border-right: 2px solid #ffffff;
+			margin: 20px;
+			font-size: 20px;
+
+		}
+
+		#menulist a{
+			text-decoration: none;
+			display: block;
+			color: #ffffff;
+		}
+		#menulist li ul{
+			position: absolute;
+			left: auto;
+			width: 150px;
+			background-color: #ccc;
+		}
+
+		.active{
+			background-color: #ff0000;
+		}
+		#span3{
+			color: #F0170E;
+			text-decoration: underline;
+		}
+		form{
+			color: #ffffff;
+		}
+		
+
+	</style>
+
+	<script>
+		$(function(){
+			$("#menulist li ul").hide();
+			$("#menulist li").hover(
+				function(){
+					$(this).find("ul").slideDown("fast");
+					$(this).find("a:first").addClass("active");
+				},function(){
+					$(this).find(".submenu").fadeOut("fast");
+					$(this).find("a").removeClass("active");
+			})
+			$("#span2").hide();
+			$("#span3").click(function(){
+				$("#span2").slideToggle();
+			})
+			$("#btn1").click(function(){
+				var age = $("#age").val();
+				if (age >= 15 && age <= 50){
+					alert("歡迎使用本網站!!")
+				}else{
+					alert("年齡不符!! 請重新輸入相符年齡!!")
+				}
+			})
+		});
+
+	</script>
+
+
+
+</head>
+<body>
+
+	<div id="wrapper">
+		<div id="banner">
+			<img src="https://beisbolgpo.net/wp-content/uploads/2021/02/Logo-de-MLB.jpg" width="20%">
+		</div>
+
+		<div id="menu">
+
+
+			<ul id="menulist">
+
+				<li><img src="https://www.mlbstatic.com/team-logos/league-on-dark/1.svg">
+					
+				</li>
+				<li><a href="#">NEWS</a>
+					<ul class="submenu">
+						<li><a href="#">Probable Picthers</a></li>
+						<li><a href="#">Injury Report</a></li>
+						<li><a href="#">Starting Lineups</a></li>
+						<li><a href="#">Transactions</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">SCHEDULE</a>
+					<ul class="submenu">
+						<li><a href="#">2022 Regular Season</a></li>
+						<li><a href="#">2022 Postseason</a></li>
+						<li><a href="#">Important Dates</a></li>
+						<li><a href="#">Team By Team Schedule</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">STATS</a>
+					<ul class="submenu">
+						<li><a href="#">Statcast Leaders</a></li>
+						<li><a href="#">Baseball Savants</a></li>
+						<li><a href="#">Top Prospect Stats</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">WATCH</a>
+					<ul class="submenu">
+						<li><a href="#">Flim Room</a></li>
+						<li><a href="#">MLB Network</a></li>
+						<li><a href="#">Search</a></li>
+						<li><a href="#">Podcasts</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">ABOUT US</a>
+					
+				</li>
+				
+
+			</ul>
+
+
+		</div>
+
+		<div id="content1">
+			<img src="https://stat.ameba.jp/user_images/20200727/12/sumomothankyou/10/8d/j/o0600033714795036680.jpg?caw=800">
+		</div>
+
+		<div id="content2">
+			<span id="span1">大谷翔平（日語：おおたに しょうへい，英語：Shohei Ohtani，1994年7月5日－），外號為"Sho-time"，[2] 為日本岩手縣奧州市出身的職業棒球選手，畢業於同縣的花卷東高等學校。守備位置為投手和外野手，2013年自日本職棒太平洋聯盟的北海道日本火腿鬥士開啟職業棒球生涯，現為美國職業棒球大聯盟洛杉磯天使所屬的球員。</span>
+			<p />
+			<span id="span3"><a>點我繼續閱讀</a></span>
+			<span id="span2">大谷是2012年選秀中火腿隊的第一指名。從2013年到2017年，他在火腿隊擔任投手和外野手。大谷於2016年投出165km/h的快速球，這是當前日籍投手的最快球速紀錄。
+
+			2017年球季過後，大谷透過入札制度與大聯盟的天使隊簽約，並在2018年球季獲得美國聯盟年度新人王。2021年球季，大谷以出色成績同時拿下美聯最有價值球員獎、主席歷史成就獎和銀棒獎。其中拿下MVP和主席歷史成就獎為日本球員在鈴木一朗後首人。
+			</span>
+		</div>
+
+	</div>
+	
+	<div id="footer">
+		
+		<form>
+			※請輸入年齡: <input type="text" id="age" required />
+			<button id="btn1">傳送</button>
+		</form>
+	</div>
+
+</body>
+</html>
