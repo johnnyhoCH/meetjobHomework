@@ -1,0 +1,107 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<title>表單</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+	<form id="form1" action="order.php" method="post">
+		<!--
+			元素區塊,被包起來視為同一區塊,這個區塊會有邊框
+		-->
+
+		<fieldset>
+			<legend>帳單資訊</legend>
+			<div>
+				<label for="name">姓名</label>	
+				<!--
+					label 用來讓表單控制元件的標題
+					一般label裡面的for對應的是表單的id名稱
+					也可以省略id 
+				-->
+				<input type="text" id="name" />
+			</div>
+
+			<div>
+				<label for="address">地址</label>
+				<input type="text" id="address" />
+			</div>
+
+			<div>
+				<span>付款方式</span>
+				<input type="radio" name="payment" value="creditcard" id="creditcard" checked />
+				<label for="credit">信用卡</label>
+				<input type="radio" name="payment" value="transfer" id="transfer" />
+				<label for="credit">轉帳</label>
+			</div>
+			<div id="credit">
+				<div>
+					<label for="cardnumber">卡號</label>
+					<input type="text" id="cardnumber" />
+				</div>
+				<!--
+					attr("disabled",true) 表示不可以輸入
+					attr("disabled",false) 表示可以輸入
+				-->
+				<div>
+					<label for="expiration">有效期限:</label>
+					<input type="text" id="expiration" />
+				</div>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>送貨地址</legend>
+			<div>
+				<input type="checkbox" id="hideship" checked />
+				<label for="hideship">同帳單地址</label>
+			</div>
+
+			<div id="name1">
+				<label for="shipname">姓名:</label>
+				<input type="text" id="shipname" />
+			</div>
+
+			<div id="address1">
+				<label for="shipaddress">地址:</label>
+				<input type="text" id="shipaddress" />
+			</div>
+			
+		</fieldset>
+
+		<script>
+			$(function(){
+				$("#hideship").click(function(){
+					if($("#hideship").is(":checked")){
+						$("#name1").hide();
+						$("#address1").hide();
+					}else{
+						$("#name1").show();
+						$("#address1").show();
+					}
+				})
+				$("#cardnumber").attr("disabled",false);
+				$("#expiration").attr("disabled",false);
+				$("#creditcard").click(function(){
+					if($("#creditcard").is(":checked")){
+						$("#cardnumber").attr("disabled",false);
+						$("#expiration").attr("disabled",false);
+					}else{
+						$("#cardnumber").attr("disabled",true);
+						$("#expiration").attr("disabled",true);
+					}
+				})
+			});
+			
+
+		</script>
+
+
+	</form>
+
+</body>
+</html>
