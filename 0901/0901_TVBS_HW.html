@@ -1,0 +1,448 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<title>0901_TVBS_homework</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<link href="css/0901_TVBS_HW.css" rel="stylesheet">
+
+	<script>
+		
+		$(function(){
+			$("#menulist li ul").hide();
+			$("#menulist li").hover(
+				function(){
+					$(this).find("ul").slideDown("fast");
+					$(this).find("a:first").addClass("active");
+				},function(){
+					$(this).find(".submenu").fadeOut("fast");
+					$(this).find("a").removeClass("active");
+			});
+
+			var i = 0;
+			var clone = $("#img li").first().clone();
+			$("#img").append(clone);
+			var size = $("#img li").size();
+			var t = setInterval(function(){
+				i++;
+				move();
+			},2000);
+
+			function move(){
+				if (i == size){
+					$("#img1").css({left:0});
+					i=1;
+				}
+				if (i == -1){
+					$("#img1").css({left:-(size-1)*900});
+					i = size-2
+				}
+				$("#img1").stop().animate({left:-i*900},900);
+			}
+
+			$("#img1").hover(function(){
+				clearInterval(t);
+			},function(){
+				t = setInterval(function(){
+					i++;
+					move();
+				},2000);
+			});
+
+			$(".btn .left").click(function(){
+				i++;
+				move();
+			});
+
+			$(".btn .right").click(function(){
+				i--;
+				move();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="banner">
+			<img src="https://cc.tvbs.com.tw/portal_production/2022/images/TVBS_logo.svg">
+			
+		</div>
+
+		<div id="menu">
+			<ul id="menulist">
+				<li><a href="#">BTS新聞</a></li>
+				<li><a href="#">女大我最人</a></li>
+				<li><a href="#">食尚玩家</a></li>
+				<li><a href="#">健康2.087</a></li>
+				<li><a href="#">地球黃金線</a></li>
+				<li><a href="#">節目</a>
+					<ul class="submenu">
+						<li><a href="#">Focus全球新聞</a></li>
+						<li><a href="#">T病毒觀點</a></li>
+						<li><a href="#">一步一腳印 發現新台灣</a></li>
+						<li><a href="#">中國加速進行式</a></li>
+						<li><a href="#">康康戰情室</a></li>
+						<li><a href="#">腸胃翻轉中</a></li>
+						<li><a href="#">扛棒人物</a></li>
+						<li><a href="#">果民大會</a></li>
+						<li><a href="#">當掌聲響起</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">戲劇</a>
+					<ul class="submenu">
+						<li><a href="#">機智校園生活</a></li>
+						<li><a href="#">天兵的微笑</a></li>
+						<li><a href="#">女兵週記</a></li>
+						<li><a href="#">翻牆的記憶</a></li>
+						<li><a href="#">酸甜汁味</a></li>
+						<li><a href="#">在一起，就好</a></li>
+						<li><a href="#">遺汗拼圖</a></li>
+						<li><a href="#">初夜的情人</a></li>
+						<li><a href="#">16個轟胎天</a></li>
+						<li><a href="#">戲劇服製作部</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">享食尚</a></li>
+				<li><a href="#">基金會</a></li>
+
+				<li><a href="#">頻道資訊</a>
+					<ul class="submenu">
+						<li><a href="#">節目表</a></li>
+						<li><a href="#">蓬萊精彩台</a></li>
+						<li><a href="#">BTS Asia</a></li>
+						<li><a href="#">新媒體數位節目</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">更多</a>
+					<ul class="submenu">
+						<li><a href="#">關於我們</a></li>
+						<li><a href="#">官方聲明</a></li>
+						<li><a href="#">業務服務</a></li>
+						<li><a href="#">人才招募</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+			
+		</div>
+
+		<div id="content">
+
+			<div id="imgbox">
+
+				<div id="img1">
+				<ul id="img">
+
+					<li><img src="img/01.jpg"></li>
+					<li><img src="img/02.jpg"></li>
+					<li><img src="img/03.jpg"></li>
+					<li><img src="img/04.jpg"></li>
+
+				</ul>
+				</div>
+
+				<div class="btn left">&lt;</div>
+				<div class="btn right">&gt;</div>
+
+				<div id="imgbox1">
+					
+					<a class="subitem" href="#"><img src="https://cc.tvbs.com.tw/img/upload/2022/08/28/20220828110050-0404724f.jpg"></a>
+					<a class="subitem" href="#"><img src="https://cc.tvbs.com.tw/img/upload/2022/08/18/20220818104748-defa3b7d.jpg"></a>
+					<a class="subitem" href="#"><img src="https://cc.tvbs.com.tw/img/upload/2022/09/04/20220904191106-a6f0bce3.jpg"></a>
+
+
+				</div>
+				
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<div class="tittle">
+				<a href="#">BTS新聞</a>
+			</div>
+
+			<div id="news">
+				<div class="news_inner">
+					<a href="#">
+						<img src="https://cc.tvbs.com.tw/img/upload/2021/04/25/20210425080441-3254037e.jpg" />
+					</a>
+				</div>
+
+				<div class="news_inner">
+					<a href="#">
+						<img src="https://cc.tvbs.com.tw/img/upload/2022/09/06/20220906100054-61034045.jpg" />
+					</a>
+					
+				</div>
+
+				<div class="news_inner">
+					<a href="#">
+						<div class="news_card">
+							<h3>新聞1</h3>
+						</div>
+					</a>
+
+					<a href="#">
+						<div class="news_card">
+							<h3>新聞2</h3>
+						</div>
+					</a>
+
+					<a href="#">
+						<div class="news_card">
+							<h3>新聞3</h3>
+						</div>
+					</a>
+
+					<a href="#">
+						<div class="news_card">
+							<h3>新聞4</h3>
+						</div>
+					</a>
+
+					<a href="#">
+						<div class="news_card">
+							<h3>新聞5</h3>
+						</div>
+					</a>
+					
+				</div>
+			</div>
+
+			<br />
+			<br />
+			<br />
+
+			<div id="popular_news">
+				<div id="topic">
+					<p>熱門議題</p>
+				</div>
+
+				<div id="topic1">
+				<a href="#">
+					<img src="https://cc.tvbs.com.tw/img/upload/2022/09/06/20220906100824-14813434.jpg">
+					<h3>熱門議題1</h3>
+				</a>
+				
+				<a href="#">
+					<img src="https://cc.tvbs.com.tw/img/upload/2022/09/06/20220906094651-44484a06.jpg">
+					<h3>熱門議題2</h3>
+				</a>
+				
+				<a href="#">
+					<img src="https://cc.tvbs.com.tw/img/upload/2022/09/05/20220905105602-70e7872d.jpg">
+					<h3>熱門議題3</h3>
+				</a>
+
+				<a href="#">
+					<img src="https://cc.tvbs.com.tw/img/upload/2022/09/05/20220905123635-d68aa45f.jpg">
+					<h3>熱門議題4</h3>
+				</a>
+				</div>
+				
+				
+			</div>
+			<br />
+			<br />
+			<br />
+
+			<div class="tittle">
+				<a href="#">精彩節目</a>
+			</div>
+
+			<div id="show">
+				<!-- 1 -->
+				<div class="show_inner">
+
+					<div class="s_tittle">
+						
+						<a href="#">
+							<img src="https://cc.tvbs.com.tw/portal_production/2022/images/logo_woman.png">
+						</a>
+
+					</div>
+
+					<div class="show_pics">
+
+						<div class="pics1">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906144812-3deb694c.jpg">
+							</a>
+						</div>
+
+						<div class="pics2">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/05/20220905225858-2d3319c5.jpg">
+							</a>
+						
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906141715-0885da72.jpg">
+							</a>
+					
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906133901-931971d0.jpg">
+							</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				<!-- 2 -->
+				<div class="show_inner">
+					<div class="s_tittle">
+						
+						<a href="#">
+							<img src="https://cc.tvbs.com.tw/portal_production/2022/images/logo_supertatse.svg">
+						</a>
+
+					</div>
+
+					<div class="show_pics">
+
+						<div class="pics1">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906134809-9c2fb9eb.jpg">
+							</a>
+						</div>
+
+						<div class="pics2">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906133724-9d57ca99.jpg">
+							</a>
+						
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906134031-13ea6135.jpg">
+							</a>
+					
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906122300-62a8e001.jpg">
+							</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				<!-- 3 -->
+				<div class="show_inner">
+					<div class="s_tittle">
+						
+						<a href="#">
+							<img src="https://cc.tvbs.com.tw/portal_production/2022/images/logo_health.svg">
+						</a>
+
+					</div>
+
+					<div class="show_pics">
+
+						<div class="pics1">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906141114-4e005e64.jpg">
+							</a>
+						</div>
+
+						<div class="pics2">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906144608-fc00c302.jpg">
+							</a>
+						
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906134151-e7407943.jpg">
+							</a>
+					
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/img/program/upload/2022/09/06/20220906132514-4f98650b.jpg">
+							</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				<!-- 4 -->
+				<div class="show_inner">
+					<div class="s_tittle">
+						
+						<a href="#">
+							<img src="https://cc.tvbs.com.tw/portal_production/2022/images/logo_car.png">
+						</a>
+
+					</div>
+
+					<div class="show_pics">
+
+						<div class="pics1">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/2017program/cars/images/uploads/2022/09/06135721/220906_BMWiX%E7%91%9E%E5%A3%AB%E8%AD%A6%E8%BB%8A%EF%BC%BF%E4%BE%86%E6%BA%90BMW-01.jpg">
+							</a>
+						</div>
+
+						<div class="pics2">
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/2017program/cars/images/uploads/2022/09/06145503/220906-%E9%A3%84%E7%A7%BB%E7%8E%8B%E8%87%AA%E9%A7%95%E8%BB%8A%EF%BC%BF%E9%A6%96%E5%9C%96.jpg">
+							</a>
+						
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/2017program/cars/images/uploads/2022/09/06143553/20220906105247-49955a00.jpeg">
+							</a>
+					
+							<a href="#">
+								<img src="https://cc.tvbs.com.tw/2017program/cars/images/uploads/2022/09/06140810/220906_ami001_%E4%BE%86%E6%BA%90citroen.jpeg">
+							</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<br />
+			<br />
+			<br />
+
+			<div class="tittle">
+				<a href="#">U擲戲劇</a>
+			</div>
+
+				
+			
+		</div>
+
+		
+	</div>
+
+	<div id="footer">
+		<div id="footer1">
+			<div id="left">
+				<a href="#">
+					<img src="https://cc.tvbs.com.tw/portal_production/2022/images/logo_footer.png"><br />
+				</a>
+				<span>您的意見是我們前進的動力，歡迎來信或來電反映<br />
+
+					意見反映：service@tvbs.com.tw<br />
+
+					服務專線：02-2656-1599</span>			
+			</div>
+			<div id="right">
+				<div id="right1">
+					
+					
+				</div>
+				
+			</div>
+			
+		</div>
+
+		<div id="footer2">
+			<span>© TVBS Media Inc. All Rights Reserved. 台北市內湖區瑞光路451號 | 聯利媒體股份有限公司</span>
+		</div>
+
+		
+	</div>
+
+</body>
+</html>
