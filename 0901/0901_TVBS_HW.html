@@ -4,7 +4,7 @@
 	
 	<title>0901_TVBS_homework</title>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 	<link href="css/0901_TVBS_HW.css" rel="stylesheet">
 
@@ -22,9 +22,9 @@
 			});
 
 			var i = 0;
-			var clone = $("#img li").first().clone();
-			$("#img").append(clone);
-			var size = $("#img li").size();
+			var clone = $("#img1 #img li").first().clone();
+			$("#img1 #img").append(clone);
+			var size = $("#img1 #img li").size();
 			var t = setInterval(function(){
 				i++;
 				move();
@@ -32,17 +32,17 @@
 
 			function move(){
 				if (i == size){
-					$("#img1").css({left:0});
-					i=1;
-				}
+					$("#imgbox #img1 #img").css({left:0});
+				i=1;
+			}
 				if (i == -1){
-					$("#img1").css({left:-(size-1)*900});
-					i = size-2
-				}
-				$("#img1").stop().animate({left:-i*900},900);
+					$("#imgbox #img1 #img").css({left:-(size-1)*900});
+				i = size-2;
+			}
+				$("#imgbox #img1 #img").stop().animate({left:-i*900},900);
 			}
 
-			$("#img1").hover(function(){
+			$("#imgbox #img1 #img").hover(function(){
 				clearInterval(t);
 			},function(){
 				t = setInterval(function(){
@@ -51,13 +51,13 @@
 				},2000);
 			});
 
-			$(".btn .left").click(function(){
-				i++;
+			$("#img1 .left").click(function(){
+				i--;
 				move();
 			});
 
-			$(".btn .right").click(function(){
-				i--;
+			$("#img1 .right").click(function(){
+				i++;
 				move();
 			});
 		});
@@ -144,10 +144,11 @@
 					<li><img src="img/04.jpg"></li>
 
 				</ul>
-				</div>
+				
 
-				<div class="btn left">&lt;</div>
-				<div class="btn right">&gt;</div>
+					<div class="btn left">&lt;</div>
+					<div class="btn right">&gt;</div>
+				</div>
 
 				<div id="imgbox1">
 					

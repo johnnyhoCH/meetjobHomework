@@ -54,6 +54,7 @@
 	width: 200px;
 	background-color:#0B5FBF;
 	font-size: 10px;
+	z-index: 1;
 }
 
 .active{
@@ -104,7 +105,7 @@
 	filter: alpha(opacity: 0.8);
 	position: absolute;
 	top: 50%;
-	margin-left: 50px;
+	
 	cursor: pointer;
 	text-align: center;
 	font-size: 30px;
@@ -113,11 +114,11 @@
 	display: none;
 }
 
-#.btn .left{
+#img1 .left{
 	left: 0px;
 }
 
-#.btn .right{
+#img1 .right{
 	right: 0px;
 }
 
@@ -146,6 +147,7 @@
 
 .tittle{
 	text-align: center;
+	clear: both;
 }
 
 .tittle a{
