@@ -106,3 +106,5 @@ if choice == "5":
     print("工作項目: ",result[1])
     print("工作詳述: ",result[2])
     
+conn.close()
+    
